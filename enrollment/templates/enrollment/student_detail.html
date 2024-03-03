@@ -1,0 +1,14 @@
+{% extends 'core/index.html' %}
+
+{% block title %}
+	Details
+{% endblock %}
+
+{% block body %}
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="{% url 'enrollment' %}">Super School</a>
+        </div>
+    </nav>
+	{% include 'enrollment/components/enrollment_edit_form.html' %}
+{% endblock %}

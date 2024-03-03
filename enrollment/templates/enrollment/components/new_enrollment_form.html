@@ -1,0 +1,19 @@
+<h3 class="alert alert-secondary fw-semibold fs-5 text-center">Add New Student</h3>
+<form method="post" class="needs-validation" novalidate>
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+    {% for field in form %}
+        <div class="my-2">
+            <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+{#            <div class="input-group has-validation">#}
+                {{ field }}
+                {% for error in field.errors %}
+                    <div class="fs-6 text-danger">
+                        {{ error }}
+                    </div>
+                {% endfor %}
+{#            </div>#}
+        </div>
+    {% endfor %}
+    <button type="submit" class="btn btn-outline-primary w-100 my-2">Add Student</button>
+</form>
